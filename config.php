@@ -1,4 +1,6 @@
 <?php
+
+// This file can be added wherever database connection is needed.
 // Data base connection
 	$servername = "localhost";
 	$dusername = "root";
