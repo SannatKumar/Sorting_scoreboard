@@ -86,7 +86,9 @@ $queryHandle->execute();
 		}
 	?>
 </table>
+
 <!-- UI Submit section -->
+
 <form action="action_page.php" method="post">
 <div class="container">
 	<div class="form-group">
