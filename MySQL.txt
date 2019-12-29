@@ -1,7 +1,8 @@
+
 //To create the database
 CREATE DATABASE usersdb;
 
-//To create the table
+//To create the table with three columns
 CREATE TABLE users(
 	id int AUTO_INCREMENT,
 	player_name varchar(50),
