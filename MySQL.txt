@@ -1,0 +1,9 @@
+//To create the database
+CREATE DATABASE usersdb;
+
+//To create the table
+CREATE TABLE users(
+	id int AUTO_INCREMENT,
+	player_name varchar(50),
+	scores int
+	);
