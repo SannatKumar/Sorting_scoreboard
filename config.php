@@ -1,4 +1,5 @@
 <?php
+// Data base connection
 	$servername = "localhost";
 	$dusername = "root";
 	$dpassword = "";
