@@ -16,7 +16,6 @@
 			$count ++ ;	
 		}
 	}
-
 	if($count > 0){
 		$updateString = "UPDATE users SET score = score + '$score' WHERE player_name = '$playerName'";
 		$queryHandle = $connect->prepare($updateString);
@@ -30,7 +29,7 @@
 		$queryHandle->bindParam(2, $score);
 		$queryHandle->execute();
 	}
-	
+
 	//Redirect to index.php	
 	header("Location: index.php");
 ?>
