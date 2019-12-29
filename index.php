@@ -12,24 +12,15 @@ $queryHandle->execute();
 	<title>Scoreboard</title>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
-
 <style>
 	    #header {
             text-align: center;
             background: skyblue;
             height: 150px;
         }
-.sort-heading{
-			cursor:pointer;	
-	cursor:pointer;	
-			cursor:pointer;	
-	cursor:pointer;	
-			cursor:pointer;	
-	cursor:pointer;	
+		.sort-heading{
 			cursor:pointer;	
 		}
 		.container .box {
@@ -70,32 +61,25 @@ $queryHandle->execute();
             width: 25%;
             margin-left: 35%;
         }
-
 </style>
 <body>
 <header id="header">
-        <h1 style="text-align: center;">Scoreboard</h1>
-        <div class="container">
-            <div class="box">
-                <div class="box-row">
-                    <div class="box-cell box1">                     
-                    </div>
-                    
-                </div>
-            </div>
-    </div>
-    </header>
-	
-	
-
-	
+	<h1 style="text-align: center;">Scoreboard</h1>
+	<div class="container">
+		<div class="box">
+			<div class="box-row">
+				<div class="box-cell box1">                     
+				</div>
+			</div>
+		</div>
+	</div>
+</header>	
 	<table class="table">
 		<tr>
 			<!--<th class="sort-heading" id="team_name-asc" >Team Name</th>-->
 			<th class="sort-heading" id="player_name-asc" >Player Name</th>
 			<th class="sort-heading" id="score-asc" >Score</th>
 		</tr>
-		
 		<?php 
 			while($rows = $queryHandle->fetch())
 			{
@@ -106,9 +90,9 @@ $queryHandle->execute();
 				echo "</tr>";
 			}
 		?>
-		
 	</table>
 	<form action="action_page.php" method="post">
+	<div class="container">
         <div class="form-group">
             <div class="container px-lg-5">
                 <div class="row mx-lg-n5">
@@ -124,32 +108,22 @@ $queryHandle->execute();
                     </div>
                 </div>
             </div>
-        </div>
+		</div>
+		</div>
     </form>
-	
-	
-	
-	<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
 	$(document).ready(function(){
 		$(".sort-heading").click(function(){
-			
 			//get data-nex-order value
 			var getSortHeading = $(this);
 			var getNextSortOrder = getSortHeading.attr('id');
-			
 			var splitID = getNextSortOrder.split('-');
-			
 			var splitIDName = splitID[0];
 			var splitOrder = splitID[1];
-			
 			//get current td value
 			var getColumnName = getSortHeading.text();
-			
 			
 			$.ajax({
 				url:'get_player_data.php',
