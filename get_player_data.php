@@ -2,7 +2,8 @@
 
 	// Go through config.php
 	require_once('config.php');
-	
+
+		//checks if the post variables are empty
 		if(isset($_POST['column']) && isset($_POST['sortOrder']))
 	{
 		$columnName = str_replace(" ","_",strtolower($_POST['column']));
