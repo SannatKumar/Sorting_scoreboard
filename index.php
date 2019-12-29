@@ -1,7 +1,7 @@
 <?php 
 
 require_once('config.php');
-$gameQuery = "select id, team_name, player_name, score from users";
+$gameQuery = "select id, player_name, score from users";
 $queryHandle = $connect->prepare($gameQuery);
 $queryHandle->execute();
 
