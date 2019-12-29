@@ -1,8 +1,6 @@
 <?php 
+
 require_once('config.php');
-
-$teamA = $_POST['teama'];
-
 $gameQuery = "select id, team_name, player_name, score from users";
 $queryHandle = $connect->prepare($gameQuery);
 $queryHandle->execute();
@@ -26,8 +24,52 @@ $queryHandle->execute();
             height: 150px;
         }
 .sort-heading{
+			cursor:pointer;	
 	cursor:pointer;	
-}
+			cursor:pointer;	
+	cursor:pointer;	
+			cursor:pointer;	
+	cursor:pointer;	
+			cursor:pointer;	
+		}
+		.container .box {
+            width: 1024px;
+            display: table;
+        }
+
+        .container .box .box-row {
+            display: table-row;
+        }
+
+        .container .box .box-cell {
+            display: table-cell;
+            width: 50%;
+            padding: 10px;
+        }
+
+        .form-group {
+            width: 100%;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .form-control {
+            float: left;
+            width: 20%;
+        }
+
+        .form-group btn btn-primary {
+            margin-top: 5%;
+        }
+
+        #exampleFormControlInputp {
+            width: 400px;
+        }
+
+        #submitbutton {
+            width: 25%;
+            margin-left: 35%;
+        }
 
 </style>
 <body>
@@ -36,11 +78,7 @@ $queryHandle->execute();
         <div class="container">
             <div class="box">
                 <div class="box-row">
-                    <div class="box-cell box1">
-						<?php 
-					
-						echo htmlspecialchars($teamA); ?>
-                     
+                    <div class="box-cell box1">                     
                     </div>
                     
                 </div>
@@ -53,7 +91,7 @@ $queryHandle->execute();
 	
 	<table class="table">
 		<tr>
-			<th class="sort-heading" id="team_name-asc" >Team Name</th>
+			<!--<th class="sort-heading" id="team_name-asc" >Team Name</th>-->
 			<th class="sort-heading" id="player_name-asc" >Player Name</th>
 			<th class="sort-heading" id="score-asc" >Score</th>
 		</tr>
@@ -62,7 +100,7 @@ $queryHandle->execute();
 			while($rows = $queryHandle->fetch())
 			{
 				echo "<tr>";
-					echo "<td>".$rows['team_name']."</td>";
+					//echo "<td>".$rows['team_name']."</td>";
 					echo "<td>".$rows['player_name']."</td>";
 					echo "<td>".$rows['score']."</td>";
 				echo "</tr>";
@@ -72,16 +110,6 @@ $queryHandle->execute();
 	</table>
 	<form action="action_page.php" method="post">
         <div class="form-group">
-            <div class="container px-lg-5">
-                <div class="row mx-lg-n5">
-                    <div class="col py-3 px-lg-5 border bg-light">
-                        <div>
-                            <input type="radio" name="teamName" value="<?php echo htmlspecialchars($teamA); ?>" class="form-control" id="exampleFormControlInputr1" checked><?php echo htmlspecialchars($teamA); ?><br />
-                        </div>
-					</div>
-				                </div>
-            </div>
-            <br>
             <div class="container px-lg-5">
                 <div class="row mx-lg-n5">
                     <div class="col py-3 px-lg-5 border bg-light"><input type="text" name="scorer" class="form-control" id="exampleFormControlInputp" placeholder="Player Name" required></div>
