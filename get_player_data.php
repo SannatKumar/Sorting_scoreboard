@@ -1,6 +1,6 @@
 <?php 
 
-	// Go through config.php once to connect to database
+	// Go through config.php
 	require_once('config.php');
 	
 		if(isset($_POST['column']) && isset($_POST['sortOrder']))
@@ -10,7 +10,9 @@
 		
 		$sql = "select id, player_name, score from users order by ".$columnName." ".$sortOrder;
 		$queryHandle = $connect->prepare($sql);
-		$queryHandle->execute();		
+		$queryHandle->execute();
+		
+		//Display the data into a table
 			
 		while($rows = $queryHandle->fetch())
 			{
