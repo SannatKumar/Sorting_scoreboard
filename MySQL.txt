@@ -1,6 +1,6 @@
 
 //To create the database
-CREATE DATABASE usersdb;
+CREATE DATABASE userdb;
 
 //To create the table with three columns
 CREATE TABLE users(
