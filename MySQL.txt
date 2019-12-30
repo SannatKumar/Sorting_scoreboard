@@ -6,5 +6,5 @@ CREATE DATABASE userdb;
 CREATE TABLE users(
 	id int(11) AUTO_INCREMENT,
 	player_name varchar(50),
-	scores int
+	score int
 	);
