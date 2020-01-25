@@ -16,6 +16,9 @@ Xampp server is used as the web server.
 
 The database is created using phpmyadmin. MySQL.txt has the Queries that can be used to create the database.
 
+[Demo Link](https://sortingscoreboard.000webhostapp.com/index.php)
+
+
 
 
 
